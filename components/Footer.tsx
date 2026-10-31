@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
+import { PhoneLink } from "@/components/PhoneLink";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -12,7 +13,7 @@ export function Footer() {
           <p className="max-w-sm text-sm text-ink-soft">{site.positioning}</p>
         </div>
         <nav aria-label="页脚导航" className="flex flex-col gap-1 text-sm">
-          {site.nav.map((item) => (
+          {site.footerNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -23,7 +24,9 @@ export function Footer() {
           ))}
         </nav>
         <div className="text-sm text-ink-soft">
-          <p className="font-medium text-ink">域名</p>
+          <p className="font-medium text-ink">电话</p>
+          <PhoneLink className="px-0" />
+          <p className="mt-4 font-medium text-ink">域名</p>
           <p className="mt-2">{site.domainLabel}</p>
         </div>
       </div>

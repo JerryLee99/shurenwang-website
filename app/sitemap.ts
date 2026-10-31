@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export const dynamic = "force-static";
 
 /** 占位日期。正式改文案时可以一并更新。 */
-const lastModified = "2026-10-30";
+const lastModified = "2026-10-31";
 
 const routes: Array<{
   path: string;
@@ -12,8 +12,10 @@ const routes: Array<{
   changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
 }> = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
-  { path: "/about/", priority: 0.8, changeFrequency: "monthly" },
   { path: "/products/", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/services/", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/cooperation/", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/about/", priority: 0.6, changeFrequency: "monthly" },
   { path: "/contact/", priority: 0.6, changeFrequency: "yearly" },
 ];
 

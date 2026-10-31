@@ -5,31 +5,31 @@ import { site } from "@/lib/site";
 export const homeContent = {
   title: site.name,
   lede: site.positioning,
-  primaryCta: "查看产品 / 服务",
+  primaryCta: "查看产品",
   secondaryCta: "联系我们",
   purposeTitle: "宗旨",
   purpose: site.purpose,
   mapTitle: "了解更多",
-  mapNote: "产品清单、团队和正式联系方式尚未提供。",
+  mapNote: "产品、服务与合作的具体内容尚未提供。",
   map: [
     {
-      href: "/about",
-      title: "关于我们",
-      body: "公司名称、品牌定位与宗旨。",
-    },
-    {
       href: "/products",
-      title: "产品 / 服务",
+      title: "产品",
       body: "具体产品尚未提供，此页为预留栏目。",
     },
     {
-      href: "/contact",
-      title: "联系我们",
-      body: "正式联系方式尚未提供。表单会打开邮件客户端。",
+      href: "/services",
+      title: "服务",
+      body: "具体服务尚未提供，此页为预留。",
+    },
+    {
+      href: "/cooperation",
+      title: "合作",
+      body: "合作方式尚未提供，此页为预留。",
     },
   ],
   closingTitle: "联系",
-  closingBody: "正式联系方式尚未提供。留言只会打开本机的邮件客户端。",
+  closingBody: "可以通过电话或微信联系。",
   closingCta: "去联系页",
 };
 
@@ -39,13 +39,13 @@ export const aboutContent = {
   purposeTitle: "宗旨",
   missingTitle: "尚未提供",
   missingNote: "下面这些还没有正式内容，因此页面不作介绍。",
-  missing: ["团队介绍", "产品与服务清单", "正式联系方式"],
+  missing: ["团队介绍", "产品说明", "服务说明", "合作方式"],
 };
 
 export const productsContent = {
-  title: "产品 / 服务",
-  description: "乐活熟人的产品与服务。具体清单尚未提供。",
-  lede: "具体产品与服务尚未提供。以下栏目为预留，名称和说明待补充。",
+  title: "产品",
+  description: "乐活熟人的产品。具体清单尚未提供。",
+  lede: "具体产品尚未提供。以下栏目为预留，名称和说明待补充。",
   items: [
     {
       title: "栏目一",
@@ -65,23 +65,24 @@ export const productsContent = {
   ],
 };
 
+export const servicesContent = {
+  title: "服务",
+  description: "乐活熟人的服务。具体内容尚未提供。",
+  lede: "具体服务尚未提供。此页为预留，说明待补充。",
+  note: "占位。服务名称与说明尚未提供。",
+};
+
+export const cooperationContent = {
+  title: "合作",
+  description: "乐活熟人的合作。具体方式尚未提供。",
+  lede: "合作方式尚未提供。此页为预留，说明待补充。",
+  note: "占位。合作对象与方式尚未提供。可通过联系页的电话或微信沟通。",
+};
+
 export const contactContent = {
   title: "联系我们",
-  description: "联系乐活熟人。正式联系方式尚未提供，当前表单为占位。",
-  lede: "正式电话、地址和邮箱尚未提供。下面的表单只会打开你自己的邮件客户端。",
-  formTitle: "发送留言",
-  requiredHint: "标有 * 的为必填。",
-  nameLabel: "姓名",
-  emailLabel: "邮箱",
-  messageLabel: "留言",
-  namePlaceholder: "你的姓名",
-  emailPlaceholder: "name@example.com",
-  messagePlaceholder: "想了解或想告知的事情",
-  submitLabel: "通过邮件发送",
-  submitHint: "提交不会把内容存到网站服务器。",
-  asideTitle: "邮箱",
-  asideNote: "占位地址，不是已公布的官方邮箱。",
-  statusOpened: "正在打开邮件客户端。如果没有反应，请直接使用页面上的邮箱。",
+  description: "联系乐活熟人。电话 13967875129，或微信扫码添加 Jerry|李警瑞。",
+  lede: "可以通过电话或微信联系。",
 };
 
 export const notFoundContent = {
