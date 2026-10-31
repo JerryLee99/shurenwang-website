@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { Logo } from "@/components/Logo";
-import { PhoneLink } from "@/components/PhoneLink";
 import { site } from "@/lib/site";
 
 function normalize(path: string) {
@@ -88,7 +87,6 @@ export function Header() {
               );
             })}
           </nav>
-          <PhoneLink />
           <button
             ref={buttonRef}
             type="button"
