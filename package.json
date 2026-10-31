@@ -1,0 +1,28 @@
+{
+  "name": "shurenwang-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "熟人网公司官网静态站点",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "npx --yes serve out",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  }
+}
