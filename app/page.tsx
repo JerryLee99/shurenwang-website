@@ -50,7 +50,6 @@ export default function HomePage() {
           <h2 id="sitemap-heading" className="text-2xl font-medium tracking-tight">
             {homeContent.mapTitle}
           </h2>
-          <p className="mt-3 max-w-2xl text-ink-soft">{homeContent.mapNote}</p>
           <ul className="mt-8 grid gap-4 md:grid-cols-3">
             {homeContent.map.map((item) => (
               <li key={item.href}>
