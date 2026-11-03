@@ -92,9 +92,24 @@ npm run typecheck
 
 各页的 `<title>`、description、canonical 和 Open Graph 在 `lib/seo.ts` 与对应的 `page.tsx`。
 
+## 部署
+
+构建结果在 `out/`。GitHub 项目页地址是 <https://jerrylee99.github.io/shurenwang-website/>，页面不在域名根路径上。
+
+`next.config.ts` 读取环境变量 `BASE_PATH`，同时用作 `basePath` 和 `assetPrefix`。不设置时不加前缀，方便以后把自定义域名绑到根路径。当前没有配置自定义域名，也不要在仓库里加 `CNAME`。
+
+按项目页路径在本地构建：
+
+```bash
+BASE_PATH=/shurenwang-website npm run build
+```
+
+`.github/workflows/build.yml` 在 pull request 和推送到 `main` 时都会带 `BASE_PATH=/shurenwang-website` 构建。只有推送到 `main` 才会上传 `out/` 并部署到 GitHub Pages。
+
+合并之后，Jerry 需要在仓库里点一次：**Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。工作流不能代替这一步。选好之后的地址是 <https://jerrylee99.github.io/shurenwang-website/>。如果合并时还没改 Source，部署作业会失败，改完再重新跑那次 workflow。
+
 ## 部署前还要 Jerry 拍板
 
-- 托管用 GitHub Pages 还是 Vercel。若用 GitHub 项目页、又还没绑 `www.shurenwang.com`，需要再加 `basePath`
 - 标志和品牌色
 - 团队介绍
 - 上线前是否先禁止搜索引擎收录（改 `app/robots.ts`）

@@ -1,6 +1,7 @@
 import { Main } from "@/components/Main";
 import { PhoneLink } from "@/components/PhoneLink";
 import { contactContent } from "@/lib/content";
+import { publicPath } from "@/lib/public-path";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -25,7 +26,7 @@ export default function ContactPage() {
           <PhoneLink className="px-0 text-lg" />
           <figure className="mt-6">
             <img
-              src={site.wechatQr}
+              src={publicPath(site.wechatQr)}
               alt={`${site.contactName}的微信二维码`}
               width={888}
               height={1131}
