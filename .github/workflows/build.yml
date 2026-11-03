@@ -5,6 +5,8 @@
 name: build
 
 on:
+  # Manual runs from the Actions UI. Pages Source must be GitHub Actions.
+  workflow_dispatch:
   pull_request:
   push:
     branches: [main]
