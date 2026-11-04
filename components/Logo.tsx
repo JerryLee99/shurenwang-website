@@ -10,12 +10,12 @@ export function Logo() {
       className="inline-flex shrink-0 items-center gap-2.5 rounded-md text-lg font-medium text-ink"
     >
       <img
-        src={publicPath("/brand/lehuo-mark.svg")}
+        src={publicPath("/brand/lehuo-badge.svg")}
         alt={site.name}
-        width={1114}
-        height={1054}
+        width={670}
+        height={670}
         decoding="async"
-        className="h-9 w-auto shrink-0"
+        className="h-11 w-11 shrink-0"
       />
       <span>{site.name}</span>
     </Link>

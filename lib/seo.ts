@@ -11,8 +11,9 @@ const ogImage = {
 const icons = {
   icon: [
     { url: "/favicon.ico", sizes: "any" },
-    { url: "/brand/icon-32.png", type: "image/png", sizes: "32x32" },
-    { url: "/brand/lehuo-mark.svg", type: "image/svg+xml" },
+    { url: "/brand/lehuo-badge-32.png", type: "image/png", sizes: "32x32" },
+    { url: "/brand/lehuo-badge-64.png", type: "image/png", sizes: "64x64" },
+    { url: "/brand/lehuo-badge.svg", type: "image/svg+xml" },
   ],
   apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
 };

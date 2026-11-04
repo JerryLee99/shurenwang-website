@@ -87,9 +87,9 @@ npm run typecheck
 - `lib/content.ts`：各页尚未定稿的栏目
 - `app/globals.css` 里的 `@theme`：颜色
 - `app/robots.ts`、`app/sitemap.ts`：收录规则和站点地图
-- `public/brand/`：标志。页眉用 `lehuo-mark.svg` 加「乐活熟人」，不叠英文名和两行口号
-- `public/favicon.ico`、`public/apple-touch-icon.png`、`public/brand/icon-32.png`：同一枚扁平图形
-- `public/og.png`：浅色横版锁版，1200×630
+- `public/brand/`：标志。页眉小标用透明底陶金圆章 `lehuo-badge.svg`，旁边仍是「乐活熟人」，不叠英文名和两行口号。陶土色扁平 `lehuo-mark.svg` 留在目录里，页眉不再使用。`lehuo-badge-light.svg` 与 `lehuo-badge-dark.svg` 和主稿是同一张透明底圆章
+- `public/favicon.ico`（16/32/48/64）、`public/brand/lehuo-badge-32.png`、`public/brand/lehuo-badge-64.png`：同一枚圆章。`public/brand/icon-32.png` 与 32px PNG 相同。`public/apple-touch-icon.png` 是 180px，圆章铺在纸色 `#f4f0e8` 上（透明像素在 iOS 上会变成黑色）
+- `public/og.png`：浅色横版，1200×630，左侧圆章，右侧文案仍是「乐活熟人 / LEHUO SHUREN」和原来的两行口号
 
 各页的 `<title>`、description、canonical 和 Open Graph 在 `lib/seo.ts` 与对应的 `page.tsx`。
 
