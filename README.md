@@ -94,19 +94,27 @@ npm run typecheck
 
 ## 部署
 
-构建结果在 `out/`。GitHub 项目页地址是 <https://jerrylee99.github.io/shurenwang-website/>，页面不在域名根路径上。
+构建结果在 `out/`。主站点是自定义域名 <https://www.shurenwang.com/>。Jerry 已把 DNS（CNAME `www` → `jerrylee99.github.io`）和 **Settings → Pages → Custom domain** 配成 `www.shurenwang.com`，页面在域名根路径 `/`。
 
-`next.config.ts` 读取环境变量 `BASE_PATH`，同时用作 `basePath` 和 `assetPrefix`。不设置时不加前缀，方便以后把自定义域名绑到根路径。当前没有配置自定义域名，也不要在仓库里加 `CNAME`。
+`next.config.ts` 读取环境变量 `BASE_PATH`，同时用作 `basePath` 和 `assetPrefix`。不设置时不加前缀。线上构建不要设置 `BASE_PATH`，否则 CSS、JS 和图片会请求 `/shurenwang-website/...` 而 404。不要在仓库里加 `CNAME`：Actions 发布会忽略它，自定义域名以 Pages 设置为准。
 
-按项目页路径在本地构建：
+与线上一致的本地构建：
+
+```bash
+npm run build
+```
+
+`.github/workflows/build.yml` 在 pull request 和推送到 `main` 时都不设置 `BASE_PATH`。只有推送到 `main` 才会上传 `out/` 并部署到 GitHub Pages。合并到 `main` 之后才会重新部署到 <https://www.shurenwang.com/>。
+
+**Settings → Pages → Source** 需要是 **GitHub Actions**。工作流不能代替这一步。如果 Source 不是 Actions，部署作业会失败，改完再重新跑那次 workflow。
+
+旧的 GitHub 项目页 <https://jerrylee99.github.io/shurenwang-website/> 是次要/遗留地址。只有还要在那个子路径提供时，才单独构建：
 
 ```bash
 BASE_PATH=/shurenwang-website npm run build
 ```
 
-`.github/workflows/build.yml` 在 pull request 和推送到 `main` 时都会带 `BASE_PATH=/shurenwang-website` 构建。只有推送到 `main` 才会上传 `out/` 并部署到 GitHub Pages。
-
-合并之后，Jerry 需要在仓库里点一次：**Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。工作流不能代替这一步。选好之后的地址是 <https://jerrylee99.github.io/shurenwang-website/>。如果合并时还没改 Source，部署作业会失败，改完再重新跑那次 workflow。
+这次构建不能和根路径站点混用。
 
 ## 部署前还要 Jerry 拍板
 
