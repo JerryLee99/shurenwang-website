@@ -1,15 +1,6 @@
 import Link from "next/link";
+import { publicPath } from "@/lib/public-path";
 import { site } from "@/lib/site";
-
-export function Mark({ className = "h-8 w-8" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <rect width="32" height="32" rx="8" fill="#1c1917" />
-      <circle cx="12.8" cy="16" r="6.2" fill="none" stroke="#f4f0e8" strokeWidth="1.6" />
-      <circle cx="19.6" cy="16" r="6.2" fill="none" stroke="#e7b59a" strokeWidth="1.6" />
-    </svg>
-  );
-}
 
 export function Logo() {
   return (
@@ -18,7 +9,14 @@ export function Logo() {
       aria-label={`${site.name}首页`}
       className="inline-flex shrink-0 items-center gap-2.5 rounded-md text-lg font-medium text-ink"
     >
-      <Mark />
+      <img
+        src={publicPath("/brand/lehuo-mark.svg")}
+        alt={site.name}
+        width={1114}
+        height={1054}
+        decoding="async"
+        className="h-9 w-auto shrink-0"
+      />
       <span>{site.name}</span>
     </Link>
   );

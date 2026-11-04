@@ -1,5 +1,6 @@
 export const site = {
   name: "乐活熟人",
+  nameEn: "LEHUO SHUREN",
   company: "宁波熟人网络科技有限公司",
   url: "https://www.shurenwang.com",
   domainLabel: "www.shurenwang.com",
