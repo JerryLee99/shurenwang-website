@@ -1,6 +1,10 @@
-# GitHub 项目页：https://jerrylee99.github.io/shurenwang-website/
+# 主站点：https://www.shurenwang.com/（自定义域名，页面在根路径 /）
+# DNS：CNAME www → jerrylee99.github.io；Pages → Custom domain = www.shurenwang.com。
+# 根路径部署不要设置 BASE_PATH（next.config 未设置时为 ""）。不要在仓库里加 CNAME：
+# Actions 发布会忽略 CNAME 文件，域名以 GitHub Pages 设置为准。
+# 旧项目页 https://jerrylee99.github.io/shurenwang-website/ 是次要/遗留地址。
+# 若还要在该子路径提供，需另一次带 BASE_PATH=/shurenwang-website 的构建，不要和根路径构建混用。
 # 仓库 Settings → Pages → Source 需要选 GitHub Actions，工作流本身不能改这个设置。
-# 以后若把自定义域名绑在站点根路径，构建时去掉 BASE_PATH，不要加 CNAME。
 
 name: build
 
@@ -30,9 +34,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # 不设置 BASE_PATH：自定义域名在根路径提供，前缀会让 CSS/JS/图片 404。
       - run: npm run build
-        env:
-          BASE_PATH: /shurenwang-website
       - name: Upload Pages artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3

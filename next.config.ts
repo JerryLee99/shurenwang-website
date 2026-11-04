@@ -5,8 +5,8 @@ import type { NextConfig } from "next";
  * 可直接用于 GitHub Pages，也可交给 Vercel 等静态托管。
  * trailingSlash 让 /about/ 以目录页输出，便于 Pages 访问。
  *
- * BASE_PATH 是项目页的子路径，例如 /shurenwang-website。
- * 未设置时不加前缀，方便以后把自定义域名绑在站点根路径上。
+ * BASE_PATH 只用于旧的 GitHub 项目页子路径，例如 /shurenwang-website。
+ * 未设置时不加前缀。主站点 www.shurenwang.com 在根路径，构建时不要设置 BASE_PATH。
  * basePath 与 assetPrefix 使用同一个值。
  */
 const basePath = (process.env.BASE_PATH ?? "").trim();
