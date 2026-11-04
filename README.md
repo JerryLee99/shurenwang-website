@@ -16,14 +16,13 @@
 - 电话：13967875129（只在联系页和页脚，不放在页眉导航旁）
 - 微信：联系页二维码，联系人 Jerry|李警瑞
 
-集中在 `lib/site.ts`。首页主视觉和关于页使用定位；关于页和首页都放了宗旨；页眉、页脚和标题使用「乐活熟人」；页脚和关于页写公司名。主导航是首页、产品、服务、合作、联系我们。关于我们只留在页脚。
+集中在 `lib/site.ts`。首页主视觉和关于页使用定位；关于页和首页都放了宗旨；页眉、页脚和标题使用「乐活熟人」；页脚在标志下多一行 LEHUO SHUREN；页脚和关于页写公司名。主导航是首页、产品、服务、合作、联系我们。关于我们只留在页脚。
 
 ## 仍是占位
 
 产品、服务和合作已经换成 Jerry 确认过的句子。还没有提供、因此页面上仍标明尚未提供的只有：
 
 - 团队介绍
-- 标志与品牌色（现在的双圆图形、墨色和陶土色都是临时视觉）
 
 ## 技术栈
 
@@ -88,7 +87,9 @@ npm run typecheck
 - `lib/content.ts`：各页尚未定稿的栏目
 - `app/globals.css` 里的 `@theme`：颜色
 - `app/robots.ts`、`app/sitemap.ts`：收录规则和站点地图
-- `public/og.png`：社交分享图
+- `public/brand/`：标志。页眉用 `lehuo-mark.svg` 加「乐活熟人」，不叠英文名和两行口号
+- `public/favicon.ico`、`public/apple-touch-icon.png`、`public/brand/icon-32.png`：同一枚扁平图形
+- `public/og.png`：浅色横版锁版，1200×630
 
 各页的 `<title>`、description、canonical 和 Open Graph 在 `lib/seo.ts` 与对应的 `page.tsx`。
 
@@ -118,7 +119,6 @@ BASE_PATH=/shurenwang-website npm run build
 
 ## 部署前还要 Jerry 拍板
 
-- 标志和品牌色
 - 团队介绍
 - 上线前是否先禁止搜索引擎收录（改 `app/robots.ts`）
 - 若服务器在中国大陆，备案信息需要确认后再加，不要先写占位号

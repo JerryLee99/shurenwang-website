@@ -8,7 +8,12 @@ export function Footer() {
     <footer className="border-t border-line">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div className="space-y-3">
-          <Logo />
+          <div>
+            <Logo />
+            <p className="mt-1 text-xs font-medium tracking-[0.16em] text-ink-soft">
+              {site.nameEn}
+            </p>
+          </div>
           <p className="text-sm font-medium text-ink">{site.company}</p>
           <p className="max-w-sm text-sm text-ink-soft">{site.positioning}</p>
         </div>

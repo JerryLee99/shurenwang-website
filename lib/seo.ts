@@ -5,7 +5,16 @@ const ogImage = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "乐活熟人，宁波熟人网络科技有限公司",
+  alt: "乐活熟人，LEHUO SHUREN。健康@快乐 · 品质生活",
+};
+
+const icons = {
+  icon: [
+    { url: "/favicon.ico", sizes: "any" },
+    { url: "/brand/icon-32.png", type: "image/png", sizes: "32x32" },
+    { url: "/brand/lehuo-mark.svg", type: "image/svg+xml" },
+  ],
+  apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
 };
 
 export const rootMetadata: Metadata = {
@@ -39,6 +48,7 @@ export const rootMetadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons,
 };
 
 export function pageMetadata({
