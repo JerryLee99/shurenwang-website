@@ -3,6 +3,7 @@ import type { Viewport } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SkipLink } from "@/components/SkipLink";
+import { VisitTracking } from "@/components/VisitTracking";
 import { rootMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="zh-CN">
       <body className="flex min-h-screen flex-col antialiased">
+        <VisitTracking />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
